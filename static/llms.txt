@@ -1,0 +1,52 @@
+# shared-features
+
+> A React + Capacitor npm package that gives an entire portfolio of apps one
+> shared layer for cross-promotion ads, in-app broadcasts/notifications,
+> feature flags, and common profile data (contact, social, payment, services,
+> testimonials). All content is authored once in the aoneahsan.com admin panel
+> and read by every consuming app from shared Firestore collections.
+
+- Package: https://www.npmjs.com/package/shared-features
+- Source: https://github.com/aoneahsan/shared-features
+- Docs source: https://github.com/aoneahsan/shared-features-docs
+- License: MIT
+- Author: Ahsan Mahmood (https://aoneahsan.com)
+
+## What it provides
+
+- **Feature Flags** — version management, feature toggles, deprecation warnings,
+  maintenance mode, platform/project targeting. Hooks: `useFeatureFlags`,
+  `useFeature`, `useFeatureGate`, `useFeatureFlagsSubscription`.
+- **Advertising Campaigns** — cross-promote products across apps with 5 ad
+  components (`AdPanel`, `AdSlider`, `AdBanner`, `AdModal`, `AdUpdateModal`) and
+  10 display variants. Hooks: `useCampaigns`, `useCampaign`, `useOneTimeAdModal`,
+  `useUpdateAdModal`. Impression/click analytics with frequency capping.
+- **Broadcasts / Notifications** — banner, modal, toast, and bell variants with
+  priority levels and scheduling. Components: `BroadcastBanner`,
+  `AnnouncementModal`. Hooks: `useBroadcasts`, `useBannerBroadcasts`,
+  `useModalBroadcasts`, `useToastBroadcasts`.
+- **Common Features** — shared contact, developer, social, address, payment,
+  services, skills, and testimonials data. Hook: `useCommonFeatures`.
+- **Notification Events** — a typed event registry + templating engine for
+  app-driven notifications.
+
+## Key docs
+
+- Introduction: https://shared-features-docs.aoneahsan.com/intro
+- Installation: https://shared-features-docs.aoneahsan.com/getting-started/installation
+- Configuration: https://shared-features-docs.aoneahsan.com/getting-started/configuration
+- Quick Start: https://shared-features-docs.aoneahsan.com/getting-started/quick-start
+- API Overview: https://shared-features-docs.aoneahsan.com/reference/api-overview
+- Hooks reference: https://shared-features-docs.aoneahsan.com/reference/hooks
+- Components reference: https://shared-features-docs.aoneahsan.com/reference/components
+- Services reference: https://shared-features-docs.aoneahsan.com/reference/services
+- FAQ: https://shared-features-docs.aoneahsan.com/faq
+
+## Honest scope
+
+- It is a **client SDK**: it reads/writes shared Firestore collections; the
+  admin authoring UI lives at aoneahsan.com (not in this package).
+- React + Firebase + Radix UI + Zustand are **peer dependencies** — consuming
+  apps install them; the package never bundles them.
+- Without a valid Firebase config it stays inert; components render `null`
+  rather than erroring (`isInitialized()` guards everything).

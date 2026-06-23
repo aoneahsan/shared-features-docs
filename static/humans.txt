@@ -1,0 +1,14 @@
+/* TEAM */
+Author: Ahsan Mahmood
+Site: https://aoneahsan.com
+Contact: aoneahsan@gmail.com
+GitHub: https://github.com/aoneahsan
+npm: https://www.npmjs.com/~aoneahsan
+LinkedIn: https://linkedin.com/in/aoneahsan
+
+/* SITE */
+Project: shared-features documentation
+Package: https://www.npmjs.com/package/shared-features
+Built with: Docusaurus 3, React, TypeScript
+Hosting: Firebase Hosting + GitHub Pages
+License: MIT

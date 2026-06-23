@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="shared-features documentation">
+  <defs>
+    <linearGradient id="sf-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="sf-mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sf-bg)"/>
+  <g transform="translate(96 200)">
+    <rect x="0" y="0" width="180" height="180" rx="42" fill="url(#sf-mark)"/>
+    <circle cx="60" cy="90" r="19" fill="#FFFFFF"/>
+    <circle cx="120" cy="60" r="19" fill="#FFFFFF"/>
+    <circle cx="120" cy="120" r="19" fill="#FFFFFF"/>
+    <path d="M75 90 L105 60 M75 90 L105 120" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="340" y="270" font-family="Inter, system-ui, sans-serif" font-size="78" font-weight="700" fill="#F8FAFC">shared-features</text>
+  <text x="342" y="340" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="400" fill="#38BDF8">Ads · Broadcasts · Feature Flags · Profile data</text>
+  <text x="342" y="392" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="400" fill="#94A3B8">React + Capacitor · one admin panel · MIT</text>
+  <text x="96" y="560" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="400" fill="#64748B">Documentation · by Ahsan Mahmood · aoneahsan.com</text>
+</svg>

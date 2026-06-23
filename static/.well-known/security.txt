@@ -1,0 +1,6 @@
+Contact: mailto:aoneahsan@gmail.com
+Preferred-Languages: en
+Canonical: https://shared-features-docs.aoneahsan.com/.well-known/security.txt
+Policy: https://aoneahsan.com
+# shared-features is an MIT-licensed open-source package. Report security
+# issues for the package or this docs site to the contact above.
