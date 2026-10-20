@@ -1,5 +1,7 @@
 # AGENTS.md — shared-features-docs
 
+**Last Updated:** 2026-10-20
+
 **Last optimized:** 2026-10-20
 **Next routine optimization:** 2026-11-19
 
@@ -51,3 +53,9 @@ domain. Require a successful Pages run plus HTTP and browser verification of cha
 The root and `docs/` guide pairs were reviewed on 2026-10-20. Stale Firebase hosting instructions were
 removed because GitHub Pages is live. Routine context work is ineligible before 2026-11-19 unless the tree
 changes materially or an instruction is proven stale.
+
+## Stop-work Git gate
+
+<!-- RULE:stop-work-git-gate v2026-10-20 -->
+
+Before stopping, commit every legitimate change and work-progress checkpoint in this repository and each independent nested repository, fetch and merge the designated upstream, push the documented working branch, then verify an empty worktree and `0 0` ahead/behind. Never stash, discard, reset, rebase, or force-push. If synchronization is blocked, report the exact repository, branch, blocker, and next action instead of calling the work complete. The full workflow remains authoritative in `~/.claude/rules/git-workflow.md`.
