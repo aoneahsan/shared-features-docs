@@ -1,77 +1,53 @@
 # CLAUDE.md — shared-features-docs
 
-Public Docusaurus documentation site for the `shared-features` npm package.
+**Last optimized:** 2026-10-20
+**Next routine optimization:** 2026-11-19
 
-## Task Speed Over Docs (IRON-SOLID — BEHAVIORAL)
+## Scope
 
-Finish the real task fast + correctly FIRST; docs/trackers/sync are a footnote (≤~20% of effort) — never let recording outpace the fix. No new summary/status/completion files unless asked; edit/delete over add. Full rule: `~/.claude/CLAUDE.md`.
+Public Docusaurus documentation for `shared-features`. The package source is
+`/home/ahsan/Documents/01-code/projects/shared-features`; its source and built declarations are authoritative
+for every API claim.
 
-## Identity
-
-| Key | Value |
+| Item | Current value |
 |---|---|
-| Repo | `shared-features-docs` (github.com/aoneahsan/shared-features-docs, PUBLIC) |
-| Type | Docusaurus 3 documentation site (classic preset + Mermaid) |
-| Package manager | yarn (Yarn Berry, `node-modules` linker; NEVER npm/pnpm) |
-| Node | >=18 |
-| Author | Ahsan Mahmood (aoneahsan@gmail.com) |
-| Live URL (planned) | https://shared-features-docs.aoneahsan.com (Firebase Hosting site `shared-features-docs` + GitHub Pages fallback) |
-| Source package | https://www.npmjs.com/package/shared-features (`shared-features` v0.1.14) |
-| Sibling project | `/home/ahsan/Documents/01-code/projects/shared-features/` (the package itself) |
-| Content tracker | `docs/tracking/shared-features-docs-content-tracker.json` |
-| Build gates | `yarn typecheck` exit 0 · `yarn build` (→ `./build`) exit 0 |
+| Package documented | `shared-features@0.1.16` |
+| Live site | `https://shared-features-docs.aoneahsan.com` |
+| Hosting | GitHub Pages from `main` |
+| Package manager | Yarn 4.17.1 only |
+| Node | `>=18`; deployment uses Node 20 |
 
-## Critical rules
+## Start here
 
-| Rule | Detail |
-|---|---|
-| Yarn only | Never `npm install`/`pnpm add`. |
-| No dev server in agent runs | The agent runs `yarn build` + `yarn typecheck` to verify; the user runs `yarn start`/`yarn serve`. |
-| Source of truth | Every API fact MUST come from the `shared-features` package source (`src/`). No invented exports/params. The sidebar entries must all map to real `.md` files (build fails otherwise). |
-| Honest framing | Say what the package does NOT do as clearly as what it does. No fabricated stats. |
-| One commit per batch | One commit per docs change set; push to remote `o`. |
-| No secrets | Public repo — never commit env values or keys. |
+Read the nearest guide pair, the page being changed, the matching package source, and `sidebars.ts` for route
+changes. Do not infer current APIs from old trackers or release prose.
 
-## Deploy
+## Commands
 
-- Firebase Hosting: `yarn build && npx -y firebase-tools@latest deploy --only hosting --project shared-features-docs` (user-only — needs Firebase auth + the Hosting site to exist).
-- GitHub Pages: `.github/workflows/deploy.yml` (push to `main`); custom domain via `static/CNAME`.
+```bash
+yarn install --immutable
+yarn typecheck
+yarn build
+yarn serve
+```
 
-## Re-run contract
+Inspect the exact `build/` output in a controlled browser before pushing a deploy-triggering commit.
 
-On re-running the docs prompt: read `docs/tracking/shared-features-docs-content-tracker.json`, confirm the package's exports haven't changed (diff against `shared-features/src/*/index.ts`), update `reference/*` + `changelog` if they have, run the build gate, bump `lastUpdated`, one commit.
+## Content rules
 
-## Gitignore Hygiene (IRON-SOLID)
-`.gitignore` stays current with the project structure — ignore only recoverable artifacts (build/`dist`/`www`/`node_modules`/logs/caches/IDE), never lose source. Custom rules always present: `*.ignore.*`, `project-record-ignore/`. This is a **PUBLIC** repo -> secrets/`.env`/keystores are NEVER tracked.
-Full rule + private/public protocol: `~/.claude/rules/project-config.md`.
-Gitignore Last Verified: 2026-06-24
+- Match exports, types, return values, defaults, and examples to source and built declarations.
+- Describe the Firebase-backed current implementation honestly; do not perform backend work from this repo.
+- Use placeholders for all project configuration and credentials.
+- Update the changelog and crawler summaries when a release or public capability changes.
+- Never install, import, vendor, or copy an owner-created client package, including `@perkforce/tool-kit`.
 
-## Last Updated
+## Publishing
 
-2026-06-23
+`.github/workflows/deploy-pages.yml` builds and deploys on pushes to `main`; `static/CNAME` owns the custom
+domain. Require a successful Pages run plus HTTP and browser verification of changed routes.
 
+## Context record
 
-## Sub-agents & Skills — Main-Context-First (IRON-SOLID)
-Default/built-in sub-agents (`general-purpose`, `Explore`, `Plan`, `claude`, `fork`, …) do NOT have
-access to `/skills`, so delegating to them silently SKIPS the skills RULE #0 requires. Do all
-skill-relevant work in the **MAIN context**; use a sub-agent ONLY when a **custom** agent exists in
-`.claude/agents/` for that job; a default `Explore`/`Plan` agent is allowed ONLY for read-only,
-no-skill search/exploration. When a relevant skill is missing, **install/enable it** rather than
-proceeding skill-less. (Owner directive 2026-07-11; full text in `~/.claude/CLAUDE.md`.)
-
-<!-- RULE:main-context-model-workflow v2026-07-16 -->
-## Main-Context + Skills + Model Workflow (IRON-SOLID — CRITICAL)
-1. **NO default/built-in sub-agents** (`general-purpose`, `Explore`, `Plan`, `claude`, `fork`, …) for ANY work in
-   this project — they cannot invoke /skills, which RULE #0 makes mandatory. Do ALL work (planning, implementation,
-   review, exploration) in the MAIN context. A sub-agent is allowed ONLY when a CUSTOM agent exists in
-   `.claude/agents/` for that exact job.
-2. **Skills always:** before any task, scan the available-skills list and invoke EVERY relevant skill; if a needed
-   skill is missing, download/enable/install it (or use the nearest installed equivalent and say so) — never
-   proceed skill-less.
-3. **Model workflow:** PLAN and REVIEW on **Fable 5**; EXECUTE the approved plan on **Opus 4.8**. Plans in
-   `~/.claude/plans/`; multi-phase features keep a resumable tracker (`docs/features/<slug>/00-tracker.json`),
-   resumed rather than re-planned from zero.
-
-Global records (rules, policy, audit reports) live in the `ahsan-notebook` repo at
-`static/assets/claude-code/`; the `~/.claude/…` paths are symlinks into it. Full text: `~/.claude/CLAUDE.md`.
-(Owner directives 2026-07-11 / 2026-07-14; fleet-rolled 2026-07-16.)
+The root and `docs/` guide pairs were reviewed on 2026-10-20. Stale Firebase hosting instructions were
+removed because GitHub Pages is live. Routine context work is ineligible before 2026-11-19 unless the tree
+changes materially or an instruction is proven stale.

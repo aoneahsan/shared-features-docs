@@ -2,7 +2,7 @@
   "name": "shared-features-docs",
   "version": "0.1.0",
   "private": true,
-  "description": "Public documentation site for the shared-features npm package (https://www.npmjs.com/package/shared-features). Built with Docusaurus, deployed to Firebase Hosting + GitHub Pages.",
+  "description": "Public Docusaurus documentation for shared-features, deployed with GitHub Pages.",
   "author": {
     "name": "Ahsan Mahmood",
     "email": "aoneahsan@gmail.com",
@@ -42,6 +42,7 @@
     "@docusaurus/module-type-aliases": "^3.10.1",
     "@docusaurus/tsconfig": "^3.10.1",
     "@docusaurus/types": "^3.10.1",
+    "@types/react": "^19.3.0",
     "typescript": "~6.0.3"
   },
   "browserslist": {

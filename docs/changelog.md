@@ -11,6 +11,17 @@ keywords: [shared-features changelog, releases, versions]
 
 Release history for the [`shared-features`](https://www.npmjs.com/package/shared-features) npm package. The npm registry is the canonical source of published versions; this page summarizes notable changes.
 
+## 0.1.16
+
+- Corrected the README’s release version so package metadata and public documentation agree.
+
+## 0.1.15
+
+- Fixed declaration output paths for every package export.
+- Corrected the package README and AI integration guide against built declarations.
+- Stopped shipping declaration source maps.
+- Added package metadata, license, changelog, and contribution guidance.
+
 ## 0.1.14
 
 - `AdPanel`'s documented `variant` prop is now functional — it renders the selected small-panel variant via `getSmallPanelVariant`, matching how `AdSlider` resolves variants. An explicit `variant` prop wins; otherwise the campaign's admin-configured variant is used (falling back to `small_panel_2`).

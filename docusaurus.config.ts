@@ -16,8 +16,7 @@ const config: Config = {
     'Centralized ads, broadcasts, feature flags, and profile data for React + Capacitor apps — managed from one admin panel.',
   favicon: 'img/favicon.svg',
 
-  // Production URL — served from Firebase Hosting site `shared-features-docs`
-  // (and GitHub Pages via the custom domain in static/CNAME).
+  // Production URL — served from GitHub Pages.
   url: SITE_URL,
   baseUrl: '/',
 
@@ -141,6 +140,8 @@ const config: Config = {
             '**/*.test.{js,jsx,ts,tsx}',
             '**/__tests__/**',
             'MANUAL-TASKS.md',
+            'AGENTS.md',
+            'CLAUDE.md',
           ],
           routeBasePath: '/',
           editUrl: 'https://github.com/aoneahsan/shared-features-docs/edit/main/',
